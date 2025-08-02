@@ -3,7 +3,7 @@ const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv").config();
-
+//investor
 const registerInvestor = asyncHandler(async (req, res) => {
   const {
     fullName,
