@@ -1,0 +1,6 @@
+<h2>Products List</h2>
+<ul>
+  <% products.forEach(product => { %>
+  <li><strong><%= product.name %></strong> - ₹<%= product.price %></li>
+  <% }); %>
+</ul>

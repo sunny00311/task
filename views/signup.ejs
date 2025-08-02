@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      :root {
+        --accent-color: #8672ff;
+        --base-color: white;
+        --text-color: #2e2b41;
+        --input-color: #f3f0ff;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-family: Poppins, Segoe UI, sans-serif;
+        font-size: 12pt;
+        color: var(--text-color);
+        text-align: center;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-image: url("https://images.unsplash.com/photo-1699462515761-90db271d77c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wrapper {
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.92);
+
+        max-width: 400px;
+        padding: 30px 40px;
+        border-radius: 15px; /*0 20px 20px 0 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      form {
+        width: min(400px, 100%);
+        margin-top: 20px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+      }
+      form > div {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      form label {
+        flex-shrink: 0;
+        height: 50px;
+        width: 50px;
+        background-color: var(--accent-color);
+        fill: var(--base-color);
+        color: var(--base-color);
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      form input {
+        box-sizing: border-box;
+        flex-grow: 1;
+        min-width: 0;
+        height: 50px;
+        padding: 1em;
+        font: inherit;
+        border-radius: 0 10px 10px 0;
+        border: 2px solid var(--input-color);
+        border-left: none;
+        background-color: var(--input-color);
+        transition: 150ms ease;
+      }
+      form input:hover {
+        border: 2px solid var(--accent-color);
+      }
+      form input:focus {
+        outline: none;
+        border-color: var(--text-color);
+      }
+      div:has(input:focus) > label {
+        background-color: var(--text-color);
+      }
+      form input::placeholder {
+        color: var(--accent-color);
+      }
+      form button {
+        margin-top: 10px;
+        border: none;
+        border-radius: 1000px;
+        padding: 0.85em 4em;
+        background-color: var(--accent-color);
+        color: var(--base-color);
+        font: inherit;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 150ms ease;
+      }
+      form button:hover {
+        background-color: var(--text-color);
+      }
+      form button:focus {
+        outline: none;
+        background-color: var(--text-color);
+      }
+      a {
+        text-decoration: none;
+        color: var(--accent-color);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 500px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .wrapper {
+          width: 90%;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        form {
+          gap: 25px;
+        }
+        form label {
+          width: 45px;
+          height: 45px;
+          font-size: 1.2rem;
+        }
+        form input {
+          height: 45px;
+          font-size: 1rem;
+        }
+        form button {
+          width: 100%;
+          font-size: 1rem;
+          padding: 0.75em;
+        }
+      }
+      form div.incorrect label {
+        background-color: red;
+      }
+      form div.incorrect input {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>SIGNUP</h1>
+      <form action="/api/users/register" method="post">
+        <div>
+          <label for="name-input">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"
+              />
+            </svg>
+          </label>
+          <input
+            required
+            type="text"
+            name="name"
+            id="name-input"
+            placeholder="name"
+          />
+        </div>
+        <div>
+          <label for="email-input">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              id="alternate-email"
+            >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path
+                fill-opacity=".9"
+                d="M12.72 2.03C6.63 1.6 1.6 6.63 2.03 12.72 2.39 18.01 7.01 22 12.31 22H16c.55 0 1-.45 1-1s-.45-1-1-1h-3.67c-3.73 0-7.15-2.42-8.08-6.03-1.49-5.8 3.91-11.21 9.71-9.71C17.58 5.18 20 8.6 20 12.33v1.1c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57v-1.25c0-2.51-1.78-4.77-4.26-5.12-3.4-.49-6.27 2.45-5.66 5.87.34 1.91 1.83 3.49 3.72 3.94 1.84.43 3.59-.16 4.74-1.33.89 1.22 2.67 1.86 4.3 1.21 1.34-.53 2.16-1.9 2.16-3.34v-1.09c0-5.31-3.99-9.93-9.28-10.29zM12 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+              ></path>
+            </svg>
+          </label>
+          <input
+            required
+            type="text"
+            name="email"
+            id="email-input"
+            placeholder="email"
+          />
+        </div>
+        <div>
+          <label for="password-input">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#1f1f1f"
+            >
+              <path
+                d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"
+              />
+            </svg>
+          </label>
+          <input
+            required
+            type="text"
+            name="password"
+            id="password-input"
+            placeholder="password"
+          />
+        </div>
+        <button type="submit">Signup</button>
+      </form>
+      <p>Already have an Account? <a href="/login">login</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Registration | InvestMate</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80")
+          no-repeat center center/cover;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 15px;
+      }
+
+      .form-container {
+        width: 100%;
+        max-width: 950px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        color: #fff;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #ffffff;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      label {
+        display: block;
+        margin-top: 18px;
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button {
+        margin-top: 30px;
+        padding: 14px 20px;
+        background: linear-gradient(to right, #007bff, #00c6ff);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: bold;
+        width: 100%;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.02);
+        background: linear-gradient(to right, #0056b3, #0096c7);
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      class="form-container"
+      action="/submit-startup"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <h2>🚀 Startup Registration – InvestMate</h2>
+
+      <label>Startup Name *</label>
+      <input type="text" name="startupName" required />
+
+      <label>Tagline *</label>
+      <input type="text" name="tagline" required />
+
+      <label>Founder Name *</label>
+      <input type="text" name="founderName" required />
+
+      <label>Email *</label>
+      <input type="email" name="email" required />
+
+      <label>Phone Number</label>
+      <input type="text" name="phone" />
+
+      <label>Location (City, Country)</label>
+      <input type="text" name="location" />
+
+      <label>Website URL</label>
+      <input type="url" name="website" />
+
+      <label>Startup Stage</label>
+      <select name="stage">
+        <option>Idea</option>
+        <option>MVP</option>
+        <option>Launched</option>
+        <option>Early Revenue</option>
+        <option>Scaling</option>
+      </select>
+
+      <label>Industry / Sector</label>
+      <select name="industry">
+        <option>EdTech</option>
+        <option>FinTech</option>
+        <option>HealthTech</option>
+        <option>AgriTech</option>
+        <option>Logistics</option>
+        <option>Others</option>
+      </select>
+
+      <label>Team Size</label>
+      <input type="number" name="teamSize" min="1" />
+
+      <label>Problem You’re Solving *</label>
+      <textarea name="problem" rows="3" required></textarea>
+
+      <label>Your Solution *</label>
+      <textarea name="solution" rows="3" required></textarea>
+
+      <label>Unique Value Proposition *</label>
+      <textarea name="valueProp" rows="3" required></textarea>
+
+      <label>Target Market</label>
+      <textarea name="market" rows="2"></textarea>
+
+      <label>Revenue Model</label>
+      <textarea name="revenueModel" rows="2"></textarea>
+
+      <label>Current Traction</label>
+      <textarea name="traction" rows="2"></textarea>
+
+      <label>Tech Stack</label>
+      <input type="text" name="techStack" />
+
+      <label>Upload Pitch Deck (PDF Only)</label>
+      <input type="file" name="pitchDeck" accept=".pdf" />
+
+      <label>Funding Required (₹ or $)</label>
+      <input type="text" name="funding" />
+
+      <label>Use of Funds</label>
+      <textarea name="fundUsage" rows="2"></textarea>
+
+      <label>Previous Funding?</label>
+      <select name="prevFunding">
+        <option>No</option>
+        <option>Yes</option>
+      </select>
+
+      <label>Social Media / Product Links</label>
+      <input
+        type="text"
+        name="socialLinks"
+        placeholder="LinkedIn, Twitter, ProductHunt..."
+      />
+      <label>create a password*</label>
+      <input type="text" name="password" required />
+
+      <button type="submit">Submit Startup Details</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>startup_post Manager</title>
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <style>
+      header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px 20px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+      #username {
+        display: block;
+        font-family: Arial;
+        margin: 0;
+      }
+      .username {
+        display: flex;
+        justify-content: end;
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: end;
+      }
+
+      nav a {
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* main {
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      } */
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #333;
+        color: white;
+        margin-top: 40px;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        header .container {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        nav {
+          margin-top: 0;
+          justify-content: center;
+        }
+
+        nav a {
+          font-size: 0.9rem;
+          padding: 4px 8px;
+          margin-right: 8px;
+        }
+
+        .username {
+          justify-content: flex-end;
+          margin-top: 0;
+        }
+
+        #username {
+          font-size: 0.9rem;
+        }
+
+        main .container {
+          justify-content: center;
+        }
+
+        header {
+          padding: 10px 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav a {
+          font-size: 0.8rem;
+          padding: 5px 8px;
+          margin-right: 8px;
+        }
+
+        #username {
+          font-size: 0.8rem;
+        }
+      }
+      .startup_post-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 250px;
+        transition: 0.3s ease;
+        position: relative;
+        padding-bottom: 40px;
+      }
+      .startup_post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+      }
+      .startup_post-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #333;
+      }
+      .startup_post-phone,
+      .startup_post-email {
+        font-size: 1rem;
+        color: #666;
+      }
+      .edit-btn {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .edit-btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo"><a href="/dashboard">startup_post Manager</a></div>
+
+        <nav>
+          <a href="/createstartup_post">Add startup_post</a>
+          <a href="/uploadstartup_post">Import startup_post</a>
+          <a href="/logout">Logout</a>
+        </nav>
+        <div class="username">
+          <h3 id="username">Welcome, <%= user.username %>!</h3>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>All startup_post</h1>
+
+      <div class="container">
+        <% startup_post.forEach(startup_post => { %>
+        <div class="startup_post-card">
+          <div class="startup_post-name"><%= startup_post.idea_name %></div>
+          <div class="startup_post-phone"><%= startup_post.discription %></div>
+          <div class="startup_post-email"><%= startup_post.email %></div>
+          <button class="edit-btn">update</button>
+        </div>
+        <% }) %>
+      </div>
+    </main>
+    <footer>
+      &copy; <%= new Date().getFullYear() %> startup App. All rights reserved.
+    </footer>
+  </body>
+</html>

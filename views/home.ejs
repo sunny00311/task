@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET FUND - Startup Meets Investor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(to right, #e0f7fa, #e1bee7);
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        background-image: url("https://media.istockphoto.com/id/1503371245/photo/percentage-sign-on-top-of-coin-stacks-before-blue-financial-graph.jpg?b=1&s=612x612&w=0&k=20&c=7A_2QwhEcxkciMxlpLL22UXAUbEIUE2nrdVTrWgsrbM=");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      header .content {
+        position: relative;
+        z-index: 1;
+      }
+
+      header img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+      }
+
+      header h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .button {
+        padding: 12px 30px;
+        background-color: #0d1a26;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .button:hover {
+        background-color: #1e2f40;
+      }
+
+      .scrolling-text {
+        background: #fff;
+        color: #0d1a26;
+        padding: 15px 0;
+        border-top: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .scrolling-text-content {
+        display: inline-block;
+        animation: scroll-left 25s linear infinite;
+        padding-left: 100%;
+        font-size: 18px;
+      }
+
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .sectionh {
+        height: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        display: flex;
+      }
+
+      .sectionh h2 {
+        font-size: 42px;
+      }
+
+      .sectionh p {
+        font-size: 22px;
+      }
+
+      section {
+        padding: 60px 30px;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      section h2,
+      section p {
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li::before {
+        content: "\2022";
+        color: #0d1a26;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f0f0f0;
+        font-size: 14px;
+      }
+
+      /* ✅ Ensure full-screen section for all sizes */
+      .full-screen-bg {
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2942/2942889.png"
+          alt="Startup Icon"
+        />
+        <h1>GET FUND</h1>
+        <p>Where Vision Meets Investment</p>
+        <a href="/forstartups" class="button">Apply for Funding</a>
+      </div>
+    </header>
+
+    <div class="scrolling-text">
+      <div class="scrolling-text-content">
+        🚀 Transforming Ideas into Reality | 🤝 Join Hands with Visionary
+        Investors | 🌐 India's Fastest Growing Startup Network | 💡 Innovation
+        Starts Here | 💰 Funding Opportunities | 📈 Scale Your Business | 🎯
+        Pitch. Connect. Grow. | 📞 Get in Touch Today!
+      </div>
+    </div>
+
+    <section
+      id="for-startups"
+      class="full-screen-bg"
+      style="
+        background-image: url('https://media.istockphoto.com/id/1200038382/photo/start-up-business-of-creative-people-concept.jpg?b=1&s=612x612&w=0&k=20&c=wT2Kwr3EZRVT4fvpP7LQvqMaFyWk8nvtca125CWBU3Y=');
+      "
+    >
+      <div class="sectionh">
+        <h2>For Startups</h2>
+        <p>
+          Looking for funding? Pitch your startup to our network of active
+          investors and mentors.
+        </p>
+        <a href="/forstartups" class="button">Apply Now</a>
+      </div>
+    </section>
+
+    <section
+      id="for-investors"
+      class="full-screen-bg"
+      style="
+        background-image: url('https://media.istockphoto.com/id/1311598658/photo/businessman-trading-online-stock-market-on-teblet-screen-digital-investment-concept.jpg?b=1&s=612x612&w=0&k=20&c=bpQMsH07ziELXla0SZJt84-w0JkxsVXs05c7T2Iygks=');
+      "
+    >
+      <div class="sectionh">
+        <h2>For Investors</h2>
+        <p>
+          Discover high-growth opportunities and innovative solutions from
+          emerging founders. Access complete pitch decks, due diligence data,
+          and more — all in one place.
+        </p>
+        <a href="/investorform" class="button">Join as Investor</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h1>About Us</h1>
+      <li>
+        At <strong>Startup Connect</strong>, we bridge the gap between emerging
+        startups and strategic investors. Our platform enables early-stage
+        ventures to showcase their innovation, connect with potential backers,
+        and accelerate their growth journey. For investors, we offer a curated
+        pipeline of high-potential startups across diverse sectors.
+      </li>
+    </section>
+
+    <section id="why-us">
+      <h1>Why Choose Us</h1>
+      <ul>
+        <li>
+          <strong>Curated Startups:</strong> Only high-quality, investor-ready
+          businesses
+        </li>
+        <li>
+          <strong>Verified Founders:</strong> Background-checked and pitch-ready
+        </li>
+        <li>
+          <strong>Insightful Analytics:</strong> Real-time performance and
+          growth indicators
+        </li>
+        <li>
+          <strong>Global Investor Network:</strong> Connect beyond borders
+        </li>
+        <li>
+          <strong>Personalized Support:</strong> From pitch decks to funding
+          rounds
+        </li>
+      </ul>
+    </section>
+
+    <footer>&copy; 2025 Startup Connect. All rights reserved.</footer>
+  </body>
+</html>

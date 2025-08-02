@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create startup_post</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e6f7ff; /* Light blue background */
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #3399ff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 80px);
+      }
+      form {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+        color: #3399ff;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #99ccff;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #3399ff;
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #267acc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>startup_post Manager</h1>
+    </header>
+
+    <main>
+      <form action="/api/startup_post" method="POST">
+        <h2>Create startup_post</h2>
+        <input type="hidden" name="mode" value="web" />
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <input type="submit" value="Save startup_post" />
+      </form>
+    </main>
+  </body>
+</html>
