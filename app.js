@@ -4,7 +4,8 @@ const dotenv = require("dotenv").config();
 const startup_postRoutes = require("./routes/routes");
 const userRoutes = require("./routes/userRoutes");
 const uiRoutes = require("./routes/uiRoutes");
-
+const startuproutes = require("./routes/startuproutes");
+const investorroutes = require("./routes/investorroutes");
 // const expressLayouts = require("express-ejs-layouts");
 const cookieParser = require("cookie-parser");
 

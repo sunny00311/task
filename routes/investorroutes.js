@@ -4,3 +4,16 @@ const validateToken = require("../midlleware/verifyToken");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
 const { log } = require("async");
+
+const { registerInvestor } = require("../controllers/investorcontroller");
+
+// router.post("/register", registerUser);
+
+// // router.post("/register", registerUser);
+
+// router.post("/login", loginUser);
+
+// router.get("/current", validateToken, currentUser);
+
+module.exports = router;
+// console.log("router :>> ", router);
