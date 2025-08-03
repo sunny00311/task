@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Dashboard</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      nav {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .left {
+        font-weight: bold;
+      }
+
+      nav .right a {
+        color: white;
+        text-decoration: none;
+        background-color: #e74c3c;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background 0.2s ease;
+      }
+
+      nav .right a:hover {
+        background-color: #c0392b;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        margin-bottom: 1rem;
+      }
+
+      .info p {
+        margin: 0.5rem 0;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="left"><%= startup.email %></div>
+      <div class="right">
+        <a href="/logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Startup Details -->
+    <div class="container">
+      <h2>Startup Details</h2>
+      <div class="info">
+        <p><strong>Name:</strong> <%= startup.name || "-" %></p>
+        <p><strong>Sector:</strong> <%= startup.sector || "-" %></p>
+        <p><strong>Founder:</strong> <%= startup.founder || "-" %></p>
+        <p><strong>Email:</strong> <%= startup.email || "-" %></p>
+        <p><strong>Location:</strong> <%= startup.location || "-" %></p>
+        <p>
+          <strong>Funding Required:</strong> ₹<%=
+          startup.fundingRequired?.toLocaleString() || "-" %>
+        </p>
+        <p><strong>Website:</strong> <%= startup.website || "-" %></p>
+        <p><strong>Description:</strong> <%= startup.description || "-" %></p>
+      </div>
+    </div>
+  </body>
+</html>

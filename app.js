@@ -15,8 +15,8 @@ const errorHandler = require("./midlleware/errorHandler");
 const db = require("./config/dbconnect.js");
 // Middleware to parse incoming JSON data
 app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
 
-// const SECRET_KEY = 'your-secret-key';
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("views"));
@@ -30,9 +30,9 @@ app.use("/api/startup", startuproutes);
 app.use("/api/investor", investorroutes);
 app.use("/", uiRoutes);
 // Home page
-app.get("/userlogin", (req, res) => {
-  res.render("partials/loginpage");
-});
+// app.get("/userlogin", (req, res) => {
+//   res.render("partials/loginpage");
+// });
 
 app.use(errorHandler);
 

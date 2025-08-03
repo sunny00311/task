@@ -5,15 +5,38 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 const { log } = require("async");
 
-const { registerstartup } = require("../controllers/startupcontroller");
+const {
+  registerstartup,
+  loginstartup,
+} = require("../controllers/startupcontroller");
 
-// router.post("/register", registerUser);
+router
+  .route("/register")
+  .post(registerstartup)
+  .get((req, res) => {
+    res.render("startups/startupform");
+  });
+router
+  .route("/login")
+  .post(loginstartup)
+  .get((req, res) => {
+    res.render("startups/login");
+  });
 
-// // router.post("/register", registerUser);
-
-// router.post("/login", loginUser);
-
-// router.get("/current", validateToken, currentUser);
+router.get("/dashboard", validateToken, (req, res) => {
+  res.render("startups/dashboard", {
+    startup: {
+      name: "InnovateX",
+      sector: "HealthTech",
+      founder: "Priya Shah",
+      email: `${req.user.email}`,
+      location: "Bangalore",
+      fundingRequired: 50000000,
+      website: "https://innovatex.in",
+      description:
+        "InnovateX is building AI-powered diagnostic tools to improve rural healthcare accessibility.",
+    },
+  });
+});
 
 module.exports = router;
-// console.log("router :>> ", router);

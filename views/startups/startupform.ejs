@@ -101,19 +101,19 @@
     </style>
   </head>
   <body>
-    <form
-      class="form-container"
-      action="/submit-startup"
-      method="POST"
-      enctype="multipart/form-data"
-    >
+    <!-- Add this inside your <body> tag -->
+    <form class="form-container" action="/api/startup/register" method="POST">
       <h2>🚀 Startup Registration – InvestMate</h2>
 
       <label>Startup Name *</label>
       <input type="text" name="startupName" required />
 
       <label>Tagline *</label>
-      <input type="text" name="tagline" required />
+      <input
+        type="text"
+        name="tagline"
+        required
+      />
 
       <label>Founder Name *</label>
       <input type="text" name="founderName" required />
@@ -174,7 +174,11 @@
       <input type="text" name="techStack" />
 
       <label>Upload Pitch Deck (PDF Only)</label>
-      <input type="file" name="pitchDeck" accept=".pdf" />
+      <input
+        type="text"
+        name="pitchDeck"
+        placeholder="enter pdf url"
+      />
 
       <label>Funding Required (₹ or $)</label>
       <input type="text" name="funding" />
@@ -194,8 +198,9 @@
         name="socialLinks"
         placeholder="LinkedIn, Twitter, ProductHunt..."
       />
+
       <label>create a password*</label>
-      <input type="text" name="password" required />
+      <input type="password" name="password" required />
 
       <button type="submit">Submit Startup Details</button>
     </form>

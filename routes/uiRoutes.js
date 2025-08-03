@@ -48,6 +48,10 @@ router.get("/uploadstartup_post", (req, res) => {
 router.get("/forstartups", (req, res) => {
   res.render("startups/startupform");
 });
+
+router.get("/startup/login", (req, res) => {
+  res.render("startups/login");
+});
 router.get("/investorform", (req, res) => {
   res.render("investor/investorform");
 });
