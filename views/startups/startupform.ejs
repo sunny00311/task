@@ -99,6 +99,11 @@
         }
       }
     </style>
+    <!-- Toastify CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   </head>
   <body>
     <!-- Add this inside your <body> tag -->
@@ -109,11 +114,7 @@
       <input type="text" name="startupName" required />
 
       <label>Tagline *</label>
-      <input
-        type="text"
-        name="tagline"
-        required
-      />
+      <input type="text" name="tagline" required />
 
       <label>Founder Name *</label>
       <input type="text" name="founderName" required />
@@ -174,11 +175,7 @@
       <input type="text" name="techStack" />
 
       <label>Upload Pitch Deck (PDF Only)</label>
-      <input
-        type="text"
-        name="pitchDeck"
-        placeholder="enter pdf url"
-      />
+      <input type="text" name="pitchDeck" placeholder="enter pdf url" />
 
       <label>Funding Required (₹ or $)</label>
       <input type="text" name="funding" />
@@ -204,5 +201,25 @@
 
       <button type="submit">Submit Startup Details</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("registered") === "1") {
+          Toastify({
+            text: "🎉 Account created successfully!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#28a745",
+            stopOnFocus: true,
+          }).showToast();
+
+          // Optional: Clean up the URL
+          window.history.replaceState(null, null, window.location.pathname);
+        }
+      });
+    </script>
   </body>
 </html>

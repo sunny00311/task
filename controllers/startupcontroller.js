@@ -66,7 +66,7 @@ const registerstartup = asyncHandler(async (req, res) => {
   );
 
   if (result.affectedRows > 0) {
-    res.status(201).json({ message: "User created successfully" });
+    res.redirect("/api/startup/login?registered=1");
   } else {
     res.status(400);
     throw new Error("User not created");
