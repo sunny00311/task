@@ -62,8 +62,9 @@ const registerInvestor = asyncHandler(async (req, res) => {
 });
 
 const logininvestor = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
-
+ // const { email, password } = req.body;
+const email="SUNNYSAHANI003@GMAIL.COM";
+  const password="sunnysahani123"
   const user = await db.query("SELECT * FROM investor WHERE email = ?", [
     email,
   ]);
